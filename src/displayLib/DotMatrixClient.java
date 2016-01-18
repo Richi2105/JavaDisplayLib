@@ -35,8 +35,12 @@ public class DotMatrixClient implements DisplayCommunication {
         this.lastList = null;
         
         LoggerAdapter.initLoggerAdapter(displayClient);
+        
+        this.displayClient.startReceiving();
 
         this.getDisplayResolution();
+        
+        this.displayClient.stopReceiving();
     }
     
     private void getDisplayResolution()
